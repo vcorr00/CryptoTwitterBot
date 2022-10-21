@@ -1,0 +1,5 @@
+user = api.get_user(screen_name="Ii_80oLl")
+tweets_user = api.user_timeline(user_id=user.id)
+for tweet in tweets_user:
+    if not tweet.favorited:
+        api.create_favorite(tweet.id)
